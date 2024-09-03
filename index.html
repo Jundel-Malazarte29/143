@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>143</title>
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/009/400/889/non_2x/red-heart-set-clipart-design-illustration-free-png.png" type="image/png">
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    padding-top: 5px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 10px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.box {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.box:hover {
+    background-color: #555;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.popup .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.popup p {
+    margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .box {
+        padding: 10px;
+        font-size: 0.8em;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 15px;
+    }
+    body{
+        padding-bottom: 60px; /* Add space at the bottom to prevent overlap */
+    }
+}
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 15px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" onclick="showMessage(1)">1</div>
+        <div class="box" onclick="showMessage(2)">2</div>
+        <div class="box" onclick="showMessage(3)">3</div>
+        <div class="box" onclick="showMessage(4)">4</div>
+        <div class="box" onclick="showMessage(5)">5</div>
+        <div class="box" onclick="showMessage(6)">6</div>
+        <div class="box" onclick="showMessage(7)">7</div>
+        <div class="box" onclick="showMessage(8)">8</div>
+        <div class="box" onclick="showMessage(9)">9</div>
+        <div class="box" onclick="showMessage(10)">10</div>
+        <div class="box" onclick="showMessage(11)">11</div>
+        <div class="box" onclick="showMessage(12)">12</div>
+        <div class="box" onclick="showMessage(13)">13</div>
+        <div class="box" onclick="showMessage(14)">14</div>
+        <div class="box" onclick="showMessage(15)">15</div>
+        <div class="box" onclick="showMessage(16)">16</div>
+        <div class="box" onclick="showMessage(17)">17</div>
+        <div class="box" onclick="showMessage(18)">18</div>
+        <div class="box" onclick="showMessage(19)">19</div>
+        <div class="box" onclick="showMessage(20)">20</div>
+        <div class="box" onclick="showMessage(21)">21</div>
+        <div class="box" onclick="showMessage(22)">22</div>
+        <div class="box" onclick="showMessage(23)">23</div>
+        <div class="box" onclick="showMessage(24)">24</div>
+        <div class="box" onclick="showMessage(25)">25</div>
+        <div class="box" onclick="showMessage(26)">26</div>
+        <div class="box" onclick="showMessage(27)">27</div>
+        <div class="box" onclick="showMessage(28)">28</div>
+        <div class="box" onclick="showMessage(29)">29</div>
+        <div class="box" onclick="showMessage(30)">30</div>
+        <div class="box" onclick="showMessage(31)">31</div>
+        <div class="box" onclick="showMessage(32)">32</div>
+        <div class="box" onclick="showMessage(33)">33</div>
+        <div class="box" onclick="showMessage(34)">34</div>
+        <div class="box" onclick="showMessage(35)">35</div>
+        <div class="box" onclick="showMessage(36)">36</div>
+        <div class="box" onclick="showMessage(37)">37</div>
+        <div class="box" onclick="showMessage(38)">38</div>
+        <div class="box" onclick="showMessage(39)">39</div>
+        <div class="box" onclick="showMessage(40)">40</div>
+        <div class="box" onclick="showMessage(41)">41</div>
+        <div class="box" onclick="showMessage(42)">42</div>
+        <div class="box" onclick="showMessage(43)">43</div>
+        <div class="box" onclick="showMessage(44)">44</div>
+        <div class="box" onclick="showMessage(45)">45</div>
+        <div class="box" onclick="showMessage(46)">46</div>
+        <div class="box" onclick="showMessage(47)">47</div>
+        <div class="box" onclick="showMessage(48)">48</div>
+        <div class="box" onclick="showMessage(49)">49</div>
+        <div class="box" onclick="showMessage(50)">50</div>
+        <div class="box" onclick="showMessage(51)">51</div>
+        <div class="box" onclick="showMessage(52)">52</div>
+        <div class="box" onclick="showMessage(53)">53</div>
+        <div class="box" onclick="showMessage(54)">54</div>
+        <div class="box" onclick="showMessage(55)">55</div>
+        <div class="box" onclick="showMessage(56)">56</div>
+        <div class="box" onclick="showMessage(57)">57</div>
+        <div class="box" onclick="showMessage(58)">58</div>
+        <div class="box" onclick="showMessage(59)">59</div>
+        <div class="box" onclick="showMessage(60)">60</div>
+        <div class="box" onclick="showMessage(61)">61</div>
+        <div class="box" onclick="showMessage(62)">62</div>
+        <div class="box" onclick="showMessage(63)">63</div>
+        <div class="box" onclick="showMessage(64)">64</div>
+        <div class="box" onclick="showMessage(65)">65</div>
+        <div class="box" onclick="showMessage(66)">66</div>
+        <div class="box" onclick="showMessage(67)">67</div>
+        <div class="box" onclick="showMessage(68)">68</div>
+        <div class="box" onclick="showMessage(69)">69</div>
+        <div class="box" onclick="showMessage(70)">70</div>
+        <div class="box" onclick="showMessage(71)">71</div>
+        <div class="box" onclick="showMessage(72)">72</div>
+        <div class="box" onclick="showMessage(73)">73</div>
+        <div class="box" onclick="showMessage(74)">74</div>
+        <div class="box" onclick="showMessage(75)">75</div>
+        <div class="box" onclick="showMessage(76)">76</div>
+        <div class="box" onclick="showMessage(77)">77</div>
+        <div class="box" onclick="showMessage(78)">78</div>
+        <div class="box" onclick="showMessage(79)">79</div>
+        <div class="box" onclick="showMessage(80)">80</div>
+        <div class="box" onclick="showMessage(81)">81</div>
+        <div class="box" onclick="showMessage(82)">82</div>
+        <div class="box" onclick="showMessage(83)">83</div>
+        <div class="box" onclick="showMessage(84)">84</div>
+        <div class="box" onclick="showMessage(85)">85</div>
+        <div class="box" onclick="showMessage(86)">86</div>
+        <div class="box" onclick="showMessage(87)">87</div>
+        <div class="box" onclick="showMessage(88)">88</div>
+        <div class="box" onclick="showMessage(89)">89</div>
+        <div class="box" onclick="showMessage(90)">90</div>
+        <div class="box" onclick="showMessage(91)">91</div>
+        <div class="box" onclick="showMessage(92)">92</div>
+        <div class="box" onclick="showMessage(93)">93</div>
+        <div class="box" onclick="showMessage(94)">94</div>
+        <div class="box" onclick="showMessage(95)">95</div>
+        <div class="box" onclick="showMessage(96)">96</div>
+        <div class="box" onclick="showMessage(97)">97</div>
+        <div class="box" onclick="showMessage(98)">98</div>
+        <div class="box" onclick="showMessage(99)">99</div>
+        <div class="box" onclick="showMessage(100)">100</div>
+        <div class="box" onclick="showMessage(101)">101</div>
+        <div class="box" onclick="showMessage(102)">102</div>
+        <div class="box" onclick="showMessage(103)">103</div>
+        <div class="box" onclick="showMessage(104)">104</div>
+        <div class="box" onclick="showMessage(105)">105</div>
+        <div class="box" onclick="showMessage(106)">106</div>
+        <div class="box" onclick="showMessage(107)">107</div>
+        <div class="box" onclick="showMessage(108)">108</div>
+        <div class="box" onclick="showMessage(109)">109</div>
+        <div class="box" onclick="showMessage(110)">110</div>
+        <div class="box" onclick="showMessage(111)">111</div>
+        <div class="box" onclick="showMessage(112)">112</div>
+        <div class="box" onclick="showMessage(113)">113</div>
+        <div class="box" onclick="showMessage(114)">114</div>
+        <div class="box" onclick="showMessage(115)">115</div>
+        <div class="box" onclick="showMessage(116)">116</div>
+        <div class="box" onclick="showMessage(117)">117</div>
+        <div class="box" onclick="showMessage(118)">118</div>
+        <div class="box" onclick="showMessage(119)">119</div>
+        <div class="box" onclick="showMessage(120)">120</div>
+        <div class="box" onclick="showMessage(121)">121</div>
+        <div class="box" onclick="showMessage(122)">122</div>
+        <div class="box" onclick="showMessage(123)">123</div>
+        <div class="box" onclick="showMessage(124)">124</div>
+        <div class="box" onclick="showMessage(125)">125</div>
+        <div class="box" onclick="showMessage(126)">126</div>
+        <div class="box" onclick="showMessage(127)">127</div>
+        <div class="box" onclick="showMessage(128)">128</div>
+        <div class="box" onclick="showMessage(129)">129</div>
+        <div class="box" onclick="showMessage(130)">130</div>
+        <div class="box" onclick="showMessage(131)">131</div>
+        <div class="box" onclick="showMessage(132)">132</div>
+        <div class="box" onclick="showMessage(133)">133</div>
+        <div class="box" onclick="showMessage(134)">134</div>
+        <div class="box" onclick="showMessage(135)">135</div>
+        <div class="box" onclick="showMessage(136)">136</div>
+        <div class="box" onclick="showMessage(137)">137</div>
+        <div class="box" onclick="showMessage(138)">138</div>
+        <div class="box" onclick="showMessage(139)">139</div>
+        <div class="box" onclick="showMessage(140)">140</div>
+        <div class="box" onclick="showMessage(141)">141</div>
+        <div class="box" onclick="showMessage(142)">142</div>
+        <div class="box" onclick="showMessage(143)">143</div>        
+    </div>
+
+    <!-- Pop-up message -->
+    <div id="popup" class="popup">
+        <span id="close" class="close" onclick="closePopup()">&times;</span>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function showMessage(number) {
+            const messages = {
+                1: "You are the sunshine in my life.",
+                2: "I love you more than words can express.",
+                3: "Every moment with you is precious.",
+                4: "You make my heart beat faster.",
+                5: "I can't imagine my life without you.",
+                6: "Your smile lights up my world.",
+                7: "I feel so lucky to have you.",
+                8: "You complete me.",
+                9: "With you, everything falls into place.",
+                10: "You are my love forever.",
+                11: "You are my greatest adventure.",
+                12: "My love for you grows every day.",
+                13: "I am so grateful for you.",
+                14: "You are the reason I wake up with a smile.",
+                15: "You make every day better.",
+                16: "I am happy when I am with you.",
+                17: "You are my dream come true.",
+                18: "You make life beautiful.",
+                19: "I love everything about you.",
+                20: "You bring joy to my heart.",
+                21: "You are everything to me.",
+                22: "I cherish every moment with you.",
+                23: "You make my life complete.",
+                24: "I fall more in love with you every day.",
+                25: "You are my soulmate.",
+                26: "You are my one and only.",
+                27: "I love you to the moon and back.",
+                28: "You make me a better person.",
+                29: "You are my happiness forever.",
+                30: "You are my best friend and my love.",
+                31: "You are my love forever.",
+                32: "I love being with you.",
+                33: "You are my special one.",
+                34: "I will always choose you.",
+                35: "You are the love of my life.",
+                36: "You are the desire of my heart.",
+                37: "I am so happy to have you.",
+                38: "You are my greatest joy.",
+                39: "You make my life worth living.",
+                40: "I love your laughter.",
+                41: "You are my sweet salvation.",
+                42: "I am so in love with you.",
+                43: "You are my favorite place.",
+                44: "You are my world.",
+                45: "You make me believe in love.",
+                46: "I can't wait to spend eternity with you.",
+                47: "You are my reason for everything.",
+                48: "You are my happy place.",
+                49: "You are my sunshine on a rainy day.",
+                50: "I love you the most.",
+                51: "You are my perfect match.",
+                52: "I am so grateful for you.",
+                53: "You make me feel special.",
+                54: "You are my best decision.",
+                55: "You are my safe haven.",
+                56: "You are my light in the dark.",
+                57: "I am so lucky to love you.",
+                58: "You are my better half.",
+                59: "You make my heart sing.",
+                60: "You are my favorite person.",
+                61: "I love you infinitely.",
+                62: "You are everything to me and more.",
+                63: "I am so proud of you.",
+                64: "You make me whole.",
+                65: "You are my reason to smile.",
+                66: "You make my life brighter.",
+                67: "I love your kind heart.",
+                68: "You are my greatest treasure.",
+                69: "You are my love story.",
+                70: "You are my eternal beloved.",
+                71: "I am so lucky I found you.",
+                72: "You are my happy ending.",
+                73: "You make every day special.",
+                74: "You are my perfect love.",
+                75: "I love your beautiful soul.",
+                76: "You are my sweet memory.",
+                77: "You make my world spin.",
+                78: "You are the home of my heart.",
+                79: "I am so grateful to love you.",
+                80: "You are my greatest blessing.",
+                81: "You make me believe in magic.",
+                82: "You are my greatest gift.",
+                83: "You are my true love.",
+                84: "I love your gentle touch.",
+                85: "You are my reason for joy.",
+                86: "You are my sweet happiness.",
+                87: "You make my heart soar.",
+                88: "You are my one true love.",
+                89: "I am so happy to be yours.",
+                90: "You are my love, my life.",
+                91: "You are everything to me, forever.",
+                92: "You make my life beautiful.",
+                93: "You are the joy of my heart.",
+                94: "You are my love always.",
+                95: "You are my only true happiness.",
+                96: "You are the true desire of my heart.",
+                97: "I am so in love with your soul.",
+                98: "You are my love, my world.",
+                99: "You make my life complete.",
+                100: "You are everything to me, my love.",
+                101: "You are my greatest joy.",
+                102: "You are my perfect love.",
+                103: "You are my sweet salvation.",
+                104: "You are my love, my life.",
+                105: "You are my true happiness.",
+                106: "You are the joy of my heart.",
+                107: "You are my love forever.",
+                108: "You are everything to me, always.",
+                109: "You make my heart sing with joy.",
+                110: "You are my one true love.",
+                111: "You are my greatest treasure.",
+                112: "You are my love, everything to me.",
+                113: "You are my sweet memory.",
+                114: "You make my world brighter.",
+                115: "You are my love, my light.",
+                116: "You are my only true happiness.",
+                117: "You are my greatest gift.",
+                118: "You are the true love of my heart.",
+                119: "You are my sweet happiness.",
+                120: "You make my life complete.",
+                121: "You are my love, forever.",
+                122: "You are the desire of my heart.",
+                123: "You are everything to me, always.",
+                124: "You make my world spin.",
+                125: "You are my love, my heart.",
+                126: "You are my sweet salvation.",
+                127: "You are my true love forever.",
+                128: "You are my greatest joy.",
+                129: "You are the true desire of my heart.",
+                130: "You are my one true love.",
+                131: "You are my greatest treasure.",
+                132: "You make my life beautiful.",
+                133: "You are my love, my world.",
+                134: "You are my sweet memory.",
+                135: "You are my love, my life.",
+                136: "You are the true love of my heart.",
+                137: "You make my world brighter.",
+                138: "You are my one true love.",
+                139: "You are my greatest gift.",
+                140: "You are everything to me, always.",
+                141: "You make my heart sing.",
+                142: "You are my love forever.",
+                143: "You are my one and only."
+            };
+
+    const message = document.getElementById('message');
+    message.textContent = messages[number] || "You are my everything.";
+
+    const popup = document.getElementById('popup');
+    popup.style.display = 'block';
+}
+
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none';
+}
+    </script>
+<footer>
+    <a href="https://github.com/jundel-malazarte29" target="_blank" rel="noopener noreferrer">@malazarte</a>
+</footer>
+</body>
+</html>
